@@ -8,7 +8,9 @@ services:
     environment:
       - APP_NAME=VulnerableScreenshotService
     volumes:
-       - display-image:/app
+      - display-image:/app
+    ports:
+      - "8888:8888"
 
   nginx:
      build: ./nginx

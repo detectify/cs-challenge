@@ -15,8 +15,6 @@ RUN apt -y install ./google-chrome-stable_current_amd64.deb
 
 FROM base
 
-EXPOSE 5000
-
 #caches the pip install step
 ADD requirements.txt /app/requirements.txt
 WORKDIR /app
