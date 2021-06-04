@@ -4,10 +4,11 @@ RUN mkdir /base
 WORKDIR /base
 
 RUN apt-get update
-RUN apt-get install -y wget
+RUN apt-get install -y wget dos2unix
 ADD fetchChromedriver.sh /base
+RUN dos2unix fetchChromedriver.sh
 RUN ./fetchChromedriver.sh
-RUN apt-get -y install libnss3
+RUN apt-get -y install libnss3 
 
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN apt -y install ./google-chrome-stable_current_amd64.deb
@@ -26,8 +27,7 @@ ADD . /app
 RUN mkdir screenshots
 
 #Remove windows file endings from the script file
-RUN cp startApps.sh startApps.sh.tmp
-RUN awk '{ sub("\r$", ""); print }' startApps.sh.tmp > startApps.sh
+RUN dos2unix startApps.sh
 
 RUN chmod +x startApps.sh
 
