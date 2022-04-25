@@ -1,25 +1,6 @@
-version: '3.3'
+version: '3'
 services:
-  
-  flask:
-    build: ./vuln-screenshot
-    container_name: vuln-screenshot
-    restart: always
-    environment:
-      - APP_NAME=VulnerableScreenshotService
-    volumes:
-       - display-image:/app
-
-  nginx:
-     build: ./nginx
-     container_name: nginx
-     restart: always
-     depends_on:
-       - flask
-     volumes:
-       - display-image:/usr/share/nginx/app
-     ports:
-       - "5000:80"
-
-volumes:
-  display-image:
+  service:
+    build: .
+    ports:
+      - 31337:31337

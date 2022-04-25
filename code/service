@@ -1,0 +1,7 @@
+#!/bin/bash
+# Written by Sebastian Neef (@gehaxelt / neef.it), 2022
+
+source config.sh
+source server.sh
+
+exit 0

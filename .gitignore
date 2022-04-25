@@ -1,2 +1,3 @@
-venv/
-env/
+.idea.md
+code/db/
+code/logs/service.log
