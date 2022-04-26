@@ -8,6 +8,7 @@ RUN mkdir /service
 COPY . /service/
 
 RUN chown -R 999:999 /service
+RUN chmod 777 /service
 
 WORKDIR /service
 USER service
